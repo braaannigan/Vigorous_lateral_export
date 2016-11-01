@@ -1,10 +1,8 @@
 # Vigorous_lateral_export
-Numerical code used for the experiments in "Vigorous lateral export of the meltwater outflow from beneath an Antarctic ice shelf", Naveira-Garabato et al., Nature
-
-This repository holds code which allows the numerical experiments described in
-the paper to be reproduced.  There are two parts to the repo.  The first part
+The numerical code used for the experiments in "Vigorous lateral export of the meltwater outflow from beneath an Antarctic ice shelf", Naveira-Garabato et al. can be found in this repository.
+There are two parts to the repo.  The first part
 "generate_inputs" folder contains the python code used to generate the binary files for
-the model initial condition.  The second part contains the MITgcm model code.
+the model initial condition.  The second part "mitgcm" contains the MITgcm model code.
 
 ## Generate_inputs
 The generate_inputs folder has the python files used to generate the model input
@@ -21,8 +19,9 @@ generated.
 ##mitgcm
 This folder contains the model code.  The model code is found in 'model'.  The
 compile_time_options allows the packages and grid to be specified.  The
-optfile used for the paper is tools/build_options/linux_archer_gfortran2. The
-input files are then found in run.  
+optfile used for the paper is tools/build_options/linux_archer_gfortran2.
+This would obviously have to be adapted for your own machine. The
+input files are then found in the directory 'run'.  
 
 If the experiment is run in a series of
 jobs on a cluster, the bash script crd.sh allows the generation of a series of input
