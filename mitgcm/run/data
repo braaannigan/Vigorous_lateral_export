@@ -1,0 +1,83 @@
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+ viscAz=4.E-5,
+ viscC4Smag=3.0,
+# This is the max Viscosity used, be it Smag or Leith, and it scales 
+# with grid size and timestep
+ viscA4GridMax=1.0,
+# useFullLeith=.TRUE.,
+ vectorInvariantMomentum=.TRUE.,
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.TRUE.,
+# bottomDragLinear=1.1E-3,
+ bottomDragQuadratic=3.E-3,
+ diffK4T=1.E-1,
+ diffKzT=4.E-5,
+ diffK4T=1.E-1,
+ diffKzS=4.E-5,
+ f0=1.4E-4
+ beta=0.E-11,
+ tAlpha=2.0E-4,
+ sBeta=0.0E-3,
+ gravity=9.81,
+ rhoConst=1000.,
+ rhoNil=1000.,
+ heatCapacity_Cp=4000.,
+ implicitFreeSurface=.TRUE.,
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+ staggerTimeStep=.TRUE.,
+ tempAdvScheme=7,
+ saltAdvScheme=7,
+ readBinaryPrec=64,
+# exactConserv=.TRUE.,
+ eosType='LINEAR',
+ nonHydrostatic=.TRUE.,
+ saltStepping=.TRUE.,
+ debugLevel=-1,
+ 
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-8,
+ cg3dMaxIters=1000,
+ cg3dTargetResidual=1.E-8,
+ &
+
+# Time stepping parameters
+ &PARM03
+ nIter0=432000,
+#endTime=43200.,
+ nTimeSteps=43200,
+ deltaT=1,
+ abEps=0.1,
+ pChkptFreq=43200,
+ chkptFreq=0.,
+ dumpFreq=0000000.,  
+ monitorFreq=3600.,
+ monitorSelect=3600000,
+# periodicExternalForcing=.TRUE.,
+# externForcingPeriod=3600.,
+# externForcingCycle=86400.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ dXspacing=4.,
+ dYspacing=4.,
+ delZ=100*3.,
+ &
+ 
+# Input datasets
+ &PARM05
+ bathyFile='dx4nx1ny1440topog.bin ',
+ hydrogThetaFile='dx4tdiff1.0PoTemp.bin',
+ hydrogSaltFile='dx4Salt.bin',
+ &

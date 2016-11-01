@@ -1,0 +1,12 @@
+# Example "data.mnc" file
+# Lines beginning "#" are comments
+ &RBCS_PARM01
+ relaxMaskFile(1)='RBCSdx4Mask.bin',
+ relaxTFile='RBCSdx4tdiff1.0PoTemp.bin',
+ relaxSFile='dx4Salt.bin',
+ useRBCtemp=.TRUE.,
+ useRBCsalt=.TRUE.,
+ tauRelaxT=10.,
+ tauRelaxS=10.,
+ &
+
