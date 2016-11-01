@@ -17,3 +17,16 @@ genpigs.py is imported into pigs_initialconds.py as a module.
 In practice, pigs_initparams.py is edited to set the desired experiment parameters.
 This script is called as 'python pigs_initparams.py' and the input files are
 generated.
+
+##mitgcm
+This folder contains the model code.  The model code is found in 'model'.  The
+compile_time_options allows the packages and grid to be specified.  The
+optfile used for the paper is tools/build_options/linux_archer_gfortran2. The
+input files are then found in run.  
+
+If the experiment is run in a series of
+jobs on a cluster, the bash script crd.sh allows the generation of a series of input
+data files.  When crd.sh is run in the terminal, the first and last job numbers
+are requested.  The script then creates a sequency of files called, say,
+data000, data001 etc..  These files have the appropriate iteration number for
+the pickup files for that point in the sequence.

@@ -4,8 +4,6 @@ echo Input first job
 read first_job
 echo Input last job
 read last_job
-#echo Input dataTemplate
-#read dataTemplate
 
 cp data dataTemplate
 sed -i 's/^ nIter0.*/ nIter0=XXX,'/ dataTemplate
